@@ -10,19 +10,43 @@ $font-stack : 'IBM Plex Sans', sans-serif;
 body {
   margin: 0;
   padding: 0;
+  background-color: $primary_color;
+  font-family: $font-stack;
 }
 
 nav {
   background-color: $primary_color;
-  width: 100%;
-  height: 100px;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  color: $primary_text_color;
+  padding: 15px;
+
+  // Anidar etiquetas
+  p {
+    font-size: 1.5em;
+    padding-left: 30px;
+  }
+
+  .icons {
+    display: flex;
+    gap: 15px;
+
+    // Anidar etiquetas
+    button {
+      background: none;
+      border-style: none;
+      cursor: pointer;
+    }
+
+  }
 }
 
 main {
   background-color: $primary_color;
 }
 
-.footer {
+footer {
   $background: #FA9500; // Variable local
   background-color: $background;
   width: 100%;
