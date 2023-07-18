@@ -11,6 +11,3 @@ Live Sass Compiler - Se ejecuta Live Sass Watch sass en ctrl + shidt + p
 ```
 Live Server
 ```
-
-2. # ecostore-landing-page-sass
-# ecostore-landing-page-sass
