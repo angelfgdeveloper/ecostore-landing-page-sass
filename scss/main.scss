@@ -11,3 +11,24 @@ body {
   margin: 0;
   padding: 0;
 }
+
+nav {
+  background-color: $primary_color;
+  width: 100%;
+  height: 100px;
+}
+
+main {
+  background-color: $primary_color;
+}
+
+.footer {
+  $background: #FA9500; // Variable local
+  background-color: $background;
+  width: 100%;
+  height: 250px;
+}
+
+
+
+
