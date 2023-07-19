@@ -11,6 +11,23 @@ $font-stack: 'IBM Plex Sans', sans-serif;
 /* Fuente de parrafos */
 $paragraph-size: 1.5em;
 
+/* Uso de Mixins con argumentos */
+@mixin flexCenter($direction, $content, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $content;
+  align-items: $align;
+}
+
+/* Mixin sin argumentos */
+@mixin buttonStyle {
+  button {
+    background: none;
+    border-style: none;
+    cursor: pointer;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -21,8 +38,9 @@ body {
 nav {
   background-color: $primary_color;
   width: auto;
-  display: flex;
-  justify-content: space-between;
+  @include flexCenter(row, space-between, center);
+  // display: flex;
+  // justify-content: space-between;
   color: $primary_text_color;
   padding: 15px;
 
@@ -36,12 +54,15 @@ nav {
     display: flex;
     gap: 15px;
 
-    // Anidar etiquetas
-    button {
-      background: none;
-      border-style: none;
-      cursor: pointer;
-    }
+    // Anidar etiquetas - 1. Se elimina el button para usar el mixin
+    // button {
+    //   background: none;
+    //   border-style: none;
+    //   cursor: pointer;
+    // }
+
+    // 2.  Se añaden los estilos del mixin
+    @include buttonStyle(); // se puede usar el (); o no es indiferente
 
   }
 }
@@ -52,13 +73,15 @@ article {
   padding-left: 45px;
   padding-right: 45px;
   padding-top: 70px;
-  display: flex;
-  justify-content: space-between;
+  // display: flex;
+  // justify-content: space-between;
+  @include flexCenter(row, space-between, center);
 
   .impact-section {
     // width: 50%;
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
+    @include flexCenter(column, space-evenly, flex-start);
     padding-top: 50px;
     gap: 25px;
   }
@@ -73,11 +96,12 @@ article {
     font-size: $paragraph-size;
   }
 
+  @include buttonStyle;
   button {
     width: 12vw;
     padding: 20px;
     background-color: $quaternary-color;
-    border-style: none;
+    // border-style: none;
     cursor: pointer;
     border-radius: 35px;
     color: white;
@@ -118,12 +142,13 @@ section {
     }
 
     .card-section {
-      display: flex;
+      @include flexCenter(row, space-evenly, center);
+      // display: flex;
       width: auto;
       height: auto;
-      justify-content: center;
+      // justify-content: center;
       flex-wrap: wrap;
-      align-items: center;
+      // align-items: center;
       column-gap: 200px;
       row-gap: 80px;
     }
@@ -187,7 +212,3 @@ footer {
   width: 100%;
   height: 250px;
 }
-
-
-
-
