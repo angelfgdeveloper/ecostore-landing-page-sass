@@ -133,7 +133,7 @@ section {
     font-size: 2em;
   }
 
-  .helthcare {
+  .healthcare {
     padding-bottom: 60px;
 
     h2 {
@@ -195,7 +195,7 @@ section {
   }
 
   .furniture {
-    @extend .helthcare; // Aplicar la herencia de las cards de .helthcare
+    @extend .healthcare; // Aplicar la herencia de las cards de .healthcare
 
     .product-card {
       background-color: $tertiary_color;
@@ -204,6 +204,44 @@ section {
 
   }
 
+}
+
+.about-us {
+  // @extend .healthcare;
+  padding-bottom: 65px;
+  
+  h2 {
+    font-weight: bold;
+    padding-bottom: 60px;
+  }
+
+  .mision-section {
+    @include flexCenter(row, space-evenly, center);
+
+    .earth {
+      width: 30vw;
+      display: flex;
+      gap: 40px;
+      color: #E86424;
+
+      img {
+        object-fit: contain;
+      }
+      
+      p {
+        text-align: center;
+        font-size: $paragraph-size;
+      }
+
+    }
+
+    .innovation {
+      // Uso de la herencia
+      @extend .earth;
+    }
+
+  }
+    
 }
 
 footer {
